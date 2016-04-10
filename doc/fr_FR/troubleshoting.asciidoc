@@ -1,0 +1,54 @@
+[panel,danger]
+.Aucun équipement ne se créé
+--
+Sur la page de configuration vous pouvez vérifier que le service du plugin est démarré et connecté.
+
+Allez voir dans la section logs de Jeedom : catégorie mySensors et eventuellement la catégorie API
+--
+
+[panel,danger]
+.Comment se créer mes équipements?
+--
+Au démarrage d'un noeud, celui-ci se présente sur le réseau, un équipement lié est alors créé avec tous ses capteurs et les commandes associées le cas échéant
+
+Il faut que l'inclusion soit activer également
+--
+
+[panel,danger]
+.Je suspecte un problème de connexion avec ma gateway
+--
+Sur la page de configuration du plugin, vous avez une note d'information qui donne le statut du service du plugin Jeedom et également le statut de connexion de celui-ci à la gateway
+--
+
+[panel,danger]
+.Mes logs montrent que j'ai bien de la communication de noeuds, mais je n'ai pas d'équipement qui apparait dans Jeedom
+--
+Vérifier votre configuration réseau dans Jeedom. Vous devez bien avoir rempli tous les champs de votre adresse interne. Protocole, adresse et complément url surtout (si vous êtes sur une intstallation Jeedom DIY, vous devez avoir /jeedom dans "complément")
+--
+
+[panel,danger]
+.Jeedom n'arrive pas à se connecter à ma gateway réseau
+--
+Vérifier par étapes que votre passerelle est fonctionnelle.
+  1-est-ce qu'elle répond à un ping
+  2-est-ce qu'elle répond à un telnet sur son port 5003 (le port par défaut dans les sketchs de gateway réseau)
+
+Si un de ces 2 points ne fonctionnent pas, la passerelle à un problème. Revérifiez votre montage et votre sketch (attention aux différences entres l'ENC28J60 et le W5100)
+--
+
+[panel,danger]
+.Je suis sur Synology, et mon service ne démarre pas
+--
+Le module serialport n'a pas réussi à être installé sur Synology (npm exactement ne peut pas être installé). Il faut soit utiliser une esclave avec une gateway série ou directement une gateway réseau.
+--
+
+[panel,danger]
+.Ma gateway réseau se déconnecte régulièrement, c'est un chip réseau ENC28J60
+--
+1- télécharger le fix pour UIPEthernet : https://github.com/ntruchsess/arduino_u ... rata12.zip
+2- supprimer tous les fichier dans le dossier UIPEthernet (dans le dossier libraries de arduino)
+3- remplacer par les fichiers du zip
+4- éditer le fichier UIPEthernet\utility\uipethernet-conf.h et mettre la ligne #define UIP_CONF_UDP à 0
+(sinon une fois compilé ca rentre pas sur un arduino, d'origine c'est fait dans la librairie)
+5- refaire la compilation et renvoyer sur l'arduino Bingo :)
+--

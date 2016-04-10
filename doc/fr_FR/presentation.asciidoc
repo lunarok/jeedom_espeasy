@@ -1,0 +1,36 @@
+'''
+=== mySensors, un protocole domotique DIY
+
+Le plugin MySensors permet d'utiliser des équipement utilisant le protocole MySensors.
+
+Les équiments MySensors sont des capteurs ou actionneurs à base d'Arduino et d'une puce NRF24L01 pour la communication
+
+A monter soit même, dans la mouvance DIY (Do It Yourself, Faites le Vous Même), ce qui permet d'avoir un coût de revient très faible et une flexibilité sans limite. Les limites de possibilités mySensors sont celles du catalogue de composants connectables à un Arduino et les exemples existants.
+
+'''
+=== Que fait le plugin Jeedom pour mySensors
+
+Le plugin mySensors permet d'utiliser les équipements mySensors via une gateway série ou réseau.
+
+Le plugin permet :
+
+ * création automatique des noeuds comme équipements lors de leur démarrage (avec leur sketch, version de sketch et de lib)
+ * création automatique des capteurs comme informations lors de leur démarrage
+ * création automatique de certaines commandes en fonction du type de capteur
+ * ajouter des commandes spécifiques sur un noeud qui ne peuvent être déduites
+ * reboot d'un noeud depuis la page d'équipement (pour les noeuds dont le bootloader permet l'action)
+
+'''
+=== mySensors, qu'est-ce que ca peut faire ?
+
+mySensors reconnait la communication bidirectionnelle, on peut donc avoir de simples capteurs (température, mouvement ...) mais aussi des actionneurs (relais, verrou ...)
+
+Le protocole prend en charge l'acquittement et le retour d'état. On y dispose d'une configuration de l'activation de l'association de nouveaux noeuds.
+
+En revanche aujourd'hui le protocole n'est pas chiffré. Néanmoins, il est nécessaire de connaitre la fréquence de communication (réglable dans la lib) et connaitre le protocole pour déchiffrer les trames.
+
+Tous les capteurs classiques sont faisables. Température, multi-capteurs, mouvement ... A condition de mettre un peu d'huile de coude et souvent de la soudure pour obtenir un bon résultat sur ces capteurs nécessitant d'être apparent et de taille réduite.
+
+Mais il est possible également de répondre à des besoins plus exotiques pour lesquels il n'existe pas de matériel sur le marché dans des protocoles classiques (Zwave, Enocean ...)
+
+Quelques exemples : mesure de niveau d'une citerne ou réservoir de pelets/granulés, systèmes de capteurs pour le jardin/aquarium ...

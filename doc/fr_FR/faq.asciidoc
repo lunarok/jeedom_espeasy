@@ -1,0 +1,60 @@
+[panel,primary]
+.Quel type de gateway mySensors est supporté ?
+--
+On peut utiliser une gateway sur port USB ou réseau (voir les liens de documentation plus bas pour plus d'informations)
+
+La gateway USB peut être utilisée sur le Jeedom principal ou un satellite
+
+Les gateway NRF ou RFM sont supportées (attention à bien utiliser un seul des deux sur un réseau unique)
+--
+
+[panel,primary]
+.Qu'est-ce que mySensors ?
+--
+mySensors est un protocole de transmission sans fil de capteurs à base d'Arduino et de puce NRF24L01
+
+Des exemples de capteurs sont proposés sur le site mySensors, mais les limites sont celles du catalogue de capteurs Arduino existant
+
+Dans la section autres documentations, un lien vers le site mySensors est disponible (en anglais) et également des liens vers des noeuds en francais
+--
+
+[panel,primary]
+.Ma passerelle est branchée en USB sur un jeedom satellite et le service ne démarre pas ?
+--
+Vérifier votre configuration réseau Jeedom dans Général->Administration->Configuration dans la partie Réseau
+--
+
+[panel,primary]
+.Le champ "version de librairie" de ma passerelle ne se remplit pas ?
+--
+Il faut adapter le sketch de la passerelle pour qu'elle envoit cette information, ce qui n'est pas le cas dans la lib 1.4.1
+
+La ligne à ajouter :
+
+Pour une passerelle USB après le gw.begin...:
+----
+Serial.print("0;0;3;0;2;");Serial.print(LIBRARY_VERSION);
+----
+
+Pour une passerelle Réseau après le server.begin();:
+----
+server.write("0;0;3;0;2;");server.write(LIBRARY_VERSION);
+----
+--
+
+[panel,primary]
+.Puis-je récupérer une valeur depuis Jeedom sur le noeuds ?
+--
+Oui, le plugin répond au GET en plus des SET des noeuds. Ce qui veut dire que tout capteur d'un noeud déclaré dans Jeedom, ce noeud peut y accéder.
+
+Il faut bien penser à décocher la case "Evènement seulement" côté Jeedom.
+
+Il existe également une possibilité de lier un capteur d'un noeud à une information quelconque de Jeedom.
+
+Pour cela le sensor doit être déclaré en type "Custom", un bouton de sélection d'une information Jeedom est alors disponible à côté du champ valeur.
+
+Il faut également du côté noeud, faire un get avec le type de données VAR5 pour que le plugin comprenne qu'on vient chercher une valeur virtuelle.
+
+Pour résumé ::
+  Sensor Custom + Data VAR5 : toute information de Jeedom devient accessible au noeud (température d'un capteur Zwave, consigne virtuelle ...)
+--

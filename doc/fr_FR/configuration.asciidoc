@@ -1,0 +1,55 @@
+=== Configuration du plugin
+
+Sur la page de configuration du plugin, vous pourrez sélectionner la ou les gateway à utiliser.
+
+Attention toutefois, il n'est pas conseillé d'avoir 2 gateways pour le même réseau de nodes.
+
+Aussi, vous pourrez avoir deux jeedom éloignés gérant le même type de noeuds (NRF) sur la même fréquence. Mais si les 2 sont à portée de plusieurs capteurs, il faudra avoir des fréquences différentes ou des puces RF différentes (NRF et RFM)
+
+'''
+==== Serial Gateway
+
+Vous pouvez sélectionner une gateway série par Jeedom installé (maitre ou esclave)
+
+'''
+==== Network Gateway
+
+Vous pouvez ajouter des gateways réseaux.
+
+'''
+=== Menu mySensors
+
+Vous retrouverez toute la configuration des équipements (informations et commandes) dans le menu Plugins->Protocole domotique->mySensors
+
+image::../images/mySensors3.png[Image du produit]
+
+'''
+==== Configuration des nodes et leurs capteurs
+
+Les équipements Jeedom sont automatiquement créés au démarrage des nodes.
+
+De la même facon que les équipements sont automatiquement créés à l'arrivée de nouveaux nodes, les capteurs des nodes sont automatiquement créés comme des "Informations" dans Jeedom.
+
+Exemple : si on reprend le cas du capteur de température, le protocole mySensors inclut une présentation du noeud sur son réseau, il envoit les informations qu'il fournit : température, niveau de batterie, humidité ... automatiquement, le controleur créé les informations associées avec leur SENSOR_ID (que vous avec dans le sketch injecté sur l'Arduino)
+
+image::../images/mySensors2.png[Image du produit]
+
+'''
+==== Configuration des commandes des nodes
+
+Des commandes sont créées automatiquement pour certains capteurs.
+
+* Relais : on/off
+
+* Dimmer : slider
+
+* Verrou : activé/désactivé
+
+image::../images/mySensors1.png[Image du produit]
+
+'''
+==== Création de commandes avancées
+
+Il est possible que certains capteurs nécessitent des commandes qui ne sont pas créées automatiquement
+car elles ne peuvent être déduites de la présentation. Dans ce cas, on créera une commande avec le bouton ajout commande
+et les options nécessaires.
