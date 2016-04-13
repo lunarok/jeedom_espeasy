@@ -121,7 +121,7 @@ if ($state == 1) {
                 <i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i>
                 </legend>
                 <div class="form-group">
-                    <label class="col-md-2 control-label">{{Nom du Node}}</label>
+                    <label class="col-md-2 control-label">{{Nom de l'ESP}}</label>
                     <div class="col-md-3">
                         <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
                         <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement espeasy}}"/>
@@ -190,56 +190,19 @@ if ($state == 1) {
                         <legend><i class="fa fa-info-circle"></i>  {{Configuration}}</legend>
 
                         <div class="form-group">
-                    		<label class="col-md-2 control-label">{{ID du Node}}</label>
+                    		<label class="col-md-2 control-label">{{IP de l'ESP}}</label>
                     		<div class="col-md-3">
-                    		 <span id="nodeId" class="eqLogicAttr" data-l1key="configuration" data-l2key="nodeid"></span>
+                    		 <span id="nodeId" class="eqLogicAttr" data-l1key="configuration" data-l2key="ip"></span>
                     		</div>
 
-                    		<label class="col-md-2 control-label">{{Version espeasy}}</label>
+                    		<label class="col-md-2 control-label">{{Nom de l'ESP}}</label>
                     		<div class="col-md-3">
-                        	<span class="eqLogicAttr" data-l1key="configuration" data-l2key="LibVersion"></span>
-                    		</div>
-
-                	</div>
-
-                        <div id="infoSketch" class="form-group">
-                    		<label class="col-md-2 control-label">{{Nom du Sketch}}</label>
-                		 <div class="col-md-3">
-                		  <span class="eqLogicAttr" data-l1key="configuration" data-l2key="SketchName"></span>
-                    		</div>
-
-                    	        <label class="col-md-2 control-label">{{Version du Sketch}}</label>
-                    		<div class="col-md-3">
-                        	<span class="eqLogicAttr" data-l1key="configuration" data-l2key="SketchVersion"></span>
+                        	<span class="eqLogicAttr" data-l1key="configuration" data-l2key="device"></span>
                     		</div>
 
                 	</div>
 
-                	<div class="form-group">
-                    		<label class="col-md-2 control-label">{{Dernière Activité}}</label>
-                    		<div class="col-md-3">
-                        	<span class="eqLogicAttr" data-l1key="configuration" data-l2key="updatetime"></span>
-                    		</div>
-
-                    		<label class="col-md-2 control-label">{{Gateway}}</label>
-                    		<div class="col-md-3">
-                    		 <span id="gateway" class="eqLogicAttr" data-l1key="configuration" data-l2key="gateway"></span>
-                    		</div>
-                	</div>
-
-                	<div class="form-group">
-                    		<label class="col-md-2 control-label">{{Batterie}}</label>
-                    		<div class="col-md-3">
-                        	<span class="eqLogicAttr" data-l1key="configuration" data-l2key="battery"></span>
-                    		</div>
-
-                    		<label class="col-md-2 control-label">{{Redémarrer le Node}}</label>
-                    		<div class="col-md-3">
-				<a class="btn btn-default" id="bt_restartEq"><i class="fa fa-power-off"></i> Redémarrer</a>
-				</div>
-                	</div>
-
-                	<legend>{{Paramètres du Sketch}}</legend>
+                	<legend><i class="fa fa-info-circle"></i>  {{Paramètres du Sketch}}</legend>
                 	<div class="form-group">
                     		<label class="col-md-2 control-label">{{Catégorie du noeud}}</label>
                     		<div class="col-md-3">
@@ -310,32 +273,6 @@ if ($state == 1) {
 </form>
         <br />
 
-        		<script>
-				$('#bt_restartEq').on('click', function () {
-					var nodeId = $('#nodeId').text();
-          var gateway = $('#gateway').text();
-					$.ajax({// fonction permettant de faire de l'ajax
-						type: "POST", // methode de transmission des données au fichier php
-						url: "plugins/espeasy/core/ajax/espeasy.ajax.php", // url du fichier php
-						data: {
-							action: "restartEq",
-							node: nodeId,
-              gateway: gateway,
-						},
-						dataType: 'json',
-						error: function (request, status, error) {
-							handleAjaxError(request, status, error);
-						},
-						success: function (data) { // si l'appel a bien fonctionné
-							if (data.state != 'ok') {
-								$('#div_alert').showAlert({message: data.result, level: 'danger'});
-								return;
-							}
-						$('#div_alert').showAlert({message: 'Le node a été relancé', level: 'success'});
-						}
-					});
-				});
-			</script>
         <table id="table_cmd" class="table table-bordered table-condensed">
             <thead>
                 <tr>

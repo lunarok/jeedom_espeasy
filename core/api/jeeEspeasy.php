@@ -23,24 +23,47 @@ if (init('apikey') != config::byKey('api') || config::byKey('api') == '') {
 	die();
 }
 
-$gateway = init('gateway');
-$nodeid = init('sender');
-$sensor = init('sensor');
-$type = init('type');
-$value = init('payload');
-$messagetype = init('messagetype');
+$device = init('device');
+$ip = 'ip';
+$task = init('task');
+$taskid = init('taskid');
+$param = init('param');
+$value = init('value');
 
-switch ($messagetype) {
-  case 'saveValue' : espeasy::saveValue($gateway, $nodeid,$sensor,$type, $value); break;//saveValue($gateway, $nodeid,$sensor,$type, $value)
-  case 'saveSketchName' : espeasy::saveSketchNameEvent($gateway, $nodeid, $value); break;//saveSketchVersion($gateway, $nodeid, $value)
-  case 'saveSketchVersion' : espeasy::saveSketchVersion($gateway, $nodeid, $value); break;//saveSketchVersion($gateway, $nodeid, $value)
-  case 'saveLibVersion' : espeasy::saveLibVersion($gateway, $nodeid, $value); break;//saveLibVersion($gateway, $nodeid, $value)
-  case 'saveSensor' : espeasy::saveSensor($gateway, $nodeid, $sensor, $value); break;//saveSensor($gateway, $nodeid, $sensor, $value)
-  case 'saveBatteryLevel' : espeasy::saveBatteryLevel($gateway, $nodeid, $value); break; // saveBatteryLevel($gateway, $nodeid, $value)
-  case 'saveGateway' : espeasy::saveGateway($gateway, $value); break;//saveGateway($gateway, $value)
-  case 'getValue' : espeasy::getValue($gateway,$nodeid,$sensor,$type); break;//getValue($gateway,$nodeid,$sensor,$type)
-  case 'getNextSensorId' : espeasy::getNextSensorId($gateway); break;//getNextSensorId($gateway)
+$elogic = self::byLogicalId($ip, 'espeasy');
+if (!is_object($elogic)) {
+	$elogic = new espeasy();
+	$elogic->setEqType_name('espeasy');
+	$elogic->setLogicalId($ip);
+	$elogic->setName($device);
+	$elogic->setIsEnable(true);
+	$elogic->setConfiguration('ip',$ip);
+	$elogic->setConfiguration('device',$device);
+	$elogic->save();
+	event::add('espeasy::includeDevice',
+	array(
+		'state' => $state
+	)
+);
+} else {
+	if ($device != $elogic->getConfiguration('device')) {
+		$elogic->setConfiguration('device',$device);
+		$elogic->save();
+	}
 }
+
+$cmdlogic = espeasyCmd::byEqLogicIdAndLogicalId($elogic->getId(),$taskid);
+if (!is_object($cmdlogic)) {
+	$cmdlogic = new espeasyCmd();
+	$cmdlogic->setLogicalId($taskid);
+	$cmdlogic->setIsVisible(1);
+	$cmdlogic->setName($task);
+	$cmdlogic->setType('info');
+	$cmdlogic->setSubType('numeric');
+	$cmdlogic->setEqLogic_id($elogic->getId());
+}
+$cmdlogic->setConfiguration('value',$value);
+$cmdlogic->save();
 
 return true;
 ?>
