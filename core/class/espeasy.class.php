@@ -24,9 +24,9 @@ class espeasy extends eqLogic {
 
   public static function sendCommand( $ip, $taskid, $value ) {
 
-    $uri = $ip . '/jc?pw=' . $value;
-    $json_string = file_get_contents($uri);
+
   }
+}
 
 class espeasyCmd extends cmd {
   public function execute($_options = null) {

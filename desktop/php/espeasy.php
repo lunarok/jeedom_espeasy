@@ -5,17 +5,6 @@ if (!isConnect('admin')) {
 }
 sendVarToJS('eqType', 'espeasy');
 $eqLogics = eqLogic::byType('espeasy');
-$dico = espeasy::$_dico;
-foreach($dico['S'] as &$value){
-$value = __($value[1],__FILE__);
-}
-foreach($dico['N'] as &$value){
-$value = __($value,__FILE__);
-}
-foreach($dico['C'] as &$value){
-$value = __($value,__FILE__);
-}
-sendVarToJS('mySensorDico', $dico);
 $state = config::byKey('include_mode', 'espeasy');
 echo '<div id="div_inclusionAlert"></div>';
 if ($state == 1) {
@@ -30,9 +19,9 @@ if ($state == 1) {
             <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
               <?php
               if ($state == 1) {
-                echo ' <a class="btn btn-success tooltips changeIncludeState" title="{{Inclure périphérique RF}}" data-state="0" style="width : 100%;margin-bottom : 5px;"><i class="fa fa-sign-in fa-rotate-90"></i> {{Arrêter inclusion}}</a>';
+                echo ' <a class="btn btn-success tooltips changeIncludeState" title="{{Inclure périphérique ESP}}" data-state="0" style="width : 100%;margin-bottom : 5px;"><i class="fa fa-sign-in fa-rotate-90"></i> {{Arrêter inclusion}}</a>';
               } else {
-                echo ' <a class="btn btn-default tooltips changeIncludeState" title="{{Inclure périphérique RF}}" data-state="1" style="width : 100%;margin-bottom : 5px;"><i class="fa fa-sign-in fa-rotate-90"></i> {{Mode inclusion}}</a>';
+                echo ' <a class="btn btn-default tooltips changeIncludeState" title="{{Inclure périphérique ESP}}" data-state="1" style="width : 100%;margin-bottom : 5px;"><i class="fa fa-sign-in fa-rotate-90"></i> {{Mode inclusion}}</a>';
               }
               ?>
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
@@ -279,8 +268,9 @@ if ($state == 1) {
                     <th style="width: 50px;">#</th>
                     <th style="width: 150px;">{{Nom}}</th>
                     <th style="width: 110px;">{{Sous-Type}}</th>
-                    <th>{{Capteur}}</th>
-                    <th style="width: 100px;">{{Donnée}}</th>
+                    <th style="width: 110px;">{{Task ID}}</th>
+                    <th>{{Valeur}}</th>
+                    <th style="width: 100px;">{{Unité}}</th>
                     <th style="width: 200px;">{{Paramètres}}</th>
                     <th style="width: 100px;"></th>
                 </tr>

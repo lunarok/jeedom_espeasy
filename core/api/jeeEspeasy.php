@@ -30,7 +30,7 @@ $taskid = init('taskid');
 $param = init('param');
 $value = init('value');
 
-$elogic = self::byLogicalId($ip, 'espeasy');
+$elogic = espeasy::byLogicalId($ip, 'espeasy');
 if (!is_object($elogic)) {
 	$elogic = new espeasy();
 	$elogic->setEqType_name('espeasy');
@@ -42,7 +42,7 @@ if (!is_object($elogic)) {
 	$elogic->save();
 	event::add('espeasy::includeDevice',
 	array(
-		'state' => $state
+		'state' => 1
 	)
 );
 } else {
