@@ -255,7 +255,6 @@ if ($state == 1) {
 <form class="form-horizontal">
     <fieldset>
         <div class="form-actions">
-        <a class="btn btn-success btn-sm cmdAction" id="bt_addespeasyInfo"><i class="fa fa-plus-circle"></i> {{Ajouter une commande info}}</a>
         <a class="btn btn-success btn-sm cmdAction" id="bt_addespeasyAction"><i class="fa fa-plus-circle"></i> {{Ajouter une commande action}}</a>
       </div>
   </fieldset>
@@ -267,11 +266,11 @@ if ($state == 1) {
                 <tr>
                     <th style="width: 50px;">#</th>
                     <th style="width: 150px;">{{Nom}}</th>
-                    <th style="width: 110px;">{{Sous-Type}}</th>
-                    <th style="width: 110px;">{{Task ID}}</th>
+                    <th style="width: 150px;">{{Type}}</th>
+                    <th style="width: 250px;">{{Task et Variable}}</th>
                     <th>{{Valeur}}</th>
                     <th style="width: 100px;">{{Unité}}</th>
-                    <th style="width: 200px;">{{Paramètres}}</th>
+                    <th style="width: 150px;">{{Paramètres}}</th>
                     <th style="width: 100px;"></th>
                 </tr>
             </thead>

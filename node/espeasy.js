@@ -1,25 +1,26 @@
-var http = require('http');
-var request = require('request');
-
-var urlJeedom = process.argv[2],
-    debug = process.argv[3] || 0;
+var http = require('http'),
+    url = require("url"),
+    request = require('request'),
+    ipaddr = process.argv[2],
+    urlJeedom = process.argv[3],
+    debug = process.argv[4] || 0;
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 function answer(req, res) {
-    console.log("We've got a request for " + req.url);
-    var uri = parse(req.url).pathname
-    url = urlJeedom + "&" + uri + "&" + req.connection.remoteAddress;
-    if (debug == 1) {console.log("Calling Jeedom " + url);}
+    var ipString = req.connection.remoteAddress;
+    console.log("We've got a request for " + req.url + " from " + ipString);
+    urlj = urlJeedom + "&" + req.url.replace("/", "") + "&ip=" + ipString;
+    if (debug == 1) {console.log("Calling Jeedom " + urlj);}
   	request({
-  		url: url,
+  		url: urlj,
   		method: 'PUT',
   	},
   	function (error, response, body) {
   		if (!error && response.statusCode == 200) {
   			if (debug == 1) {console.log((new Date()) + "Got response Value: " + response.statusCode);}
   		}else{
-  			console.log((new Date()) + " - SaveValue Error : "  + error );
+  			console.log((new Date()) + " - Error : "  + error );
   		}
   	});
 
@@ -43,7 +44,7 @@ function answer(req, res) {
 var server = http.createServer(answer);
 
 // Turn server on - now listening for requests on localIP and port
-server.listen(8121);
+server.listen(8121, ipaddr);
 
 // print message to terminal that server is running
 console.log('Server running');

@@ -93,26 +93,22 @@ $("#table_cmd").sortable({axis: "y", cursor: "move", items: ".cmd", placeholder:
 
 function addCmdToTable(_cmd) {
   if (!isset(_cmd)) {
-    var _cmd = {configuration: {}};
-  }
-  if (!isset(_cmd.configuration)) {
-    _cmd.configuration = {};
-  }
+        var _cmd = {configuration: {}};
+    }
 
   if (init(_cmd.type) == 'info') {
-    var disabled = (init(_cmd.configuration.virtualAction) == '1') ? 'disabled' : '';
     var tr = '<tr class="cmd" data-cmd_id="' + init(_cmd.id) + '">';
     tr += '<td>';
     tr += '<span class="cmdAttr" data-l1key="id"></span>';
     tr += '</td>';
     tr += '<td>';
     tr += '<input class="cmdAttr form-control input-sm" data-l1key="name" style="width : 140px;" placeholder="{{Nom du capteur}}"></td>';
-    tr += '<td>';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="id" style="display : none;">';
+    tr += '<td class="expertModeVisible">';
     tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
     tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
-    tr += '</td><td>';
-    tr += '<span class="cmdAttr"  data-l1key="configuration" data-l2key="taskid"></span>';
+    tr += '</td>';
+    tr += '<td>';
+    tr += '<span class="cmdAttr"  data-l1key="configuration" data-l2key="cmd"></span> (Task <span class="cmdAttr"  data-l1key="configuration" data-l2key="taskid"></span>)';
     tr += '</td><td>';
     tr += '<span class="cmdAttr"  data-l1key="configuration" data-l2key="value"></span>';
     tr += '</td><td>';
@@ -152,14 +148,14 @@ if (init(_cmd.type) == 'action') {
   tr += '</div>';
   tr += '</div>';
   tr += '</td>';
-  tr += '<td>';
-  tr += '<input class="cmdAttr form-control input-sm" data-l1key="id" style="display : none;">';
+  tr += '<td class="expertModeVisible">';
   tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
   tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
-  tr += '</td><td>';
+  tr += '</td>';
+  tr += '<td>';
   tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="request">';
   tr += '</td><td>';
-  tr += 'control?cmd=<span class="cmdAttr"  data-l1key="configuration" data-l2key="request"></span>';
+  tr += '<span class="cmdAttr"  data-l1key="configuration" data-l2key="value"></span>';
   tr += '</td><td>';
   tr += '</td><td>';
   tr += '<span><input type="checkbox" data-size="mini" data-label-text="{{Afficher}}" class="cmdAttr bootstrapSwitch" data-l1key="isVisible" /></span>';

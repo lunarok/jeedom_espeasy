@@ -56,7 +56,7 @@ class espeasy extends eqLogic {
     }
     $sensor_path = realpath(dirname(__FILE__) . '/../../node');
 
-    $cmd = 'nice -n 19 nodejs ' . $sensor_path . '/espeasy.js ' . $url . ' ' . $log;
+    $cmd = 'nice -n 19 nodejs ' . $sensor_path . '/espeasy.js ' . config::byKey('internalAddr') . ' ' . $url . ' ' . $log;
 
     log::add('espeasy', 'debug', 'Lancement démon espeasy : ' . $cmd);
 
@@ -159,5 +159,14 @@ class espeasyCmd extends cmd {
       return $request;
     }
     return true;
+  }
+
+  public function preSave() {
+    if ($this->getType() == "action") {
+      $eqLogic = $this->getEqLogic();
+      log::add('espeasy','info','http://' . $eqLogic->getConfiguration('ip') . '/control?cmd=' . $this->getConfiguration('request'));
+      $this->setConfiguration('value', 'http://' . $eqLogic->getConfiguration('ip') . '/control?cmd=' . $this->getConfiguration('request'));
+      //$this->save();
+    }
   }
 }

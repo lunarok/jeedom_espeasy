@@ -55,12 +55,12 @@ $cmdlogic = espeasyCmd::byEqLogicIdAndLogicalId($elogic->getId(),$cmd);
 if (!is_object($cmdlogic)) {
 	$cmdlogic = new espeasyCmd();
 	$cmdlogic->setLogicalId($cmd);
-	$cmdlogic->setIsVisible(1);
 	$cmdlogic->setName($cmd);
 	$cmdlogic->setType('info');
 	$cmdlogic->setSubType('numeric');
 	$cmdlogic->setEqLogic_id($elogic->getId());
 	$cmdlogic->setConfiguration('taskid',$taskid);
+	$cmdlogic->setConfiguration('cmd',$cmd);
 }
 $cmdlogic->setConfiguration('value',$value);
 $cmdlogic->save();
