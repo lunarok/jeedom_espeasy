@@ -24,10 +24,9 @@ if (init('apikey') != config::byKey('api') || config::byKey('api') == '') {
 }
 
 $device = init('device');
-$ip = 'ip';
-$task = init('task');
+$ip = init('ip');
 $taskid = init('taskid');
-$param = init('param');
+$cmd = init('cmd');
 $value = init('value');
 
 $elogic = espeasy::byLogicalId($ip, 'espeasy');
@@ -52,15 +51,16 @@ if (!is_object($elogic)) {
 	}
 }
 
-$cmdlogic = espeasyCmd::byEqLogicIdAndLogicalId($elogic->getId(),$taskid);
+$cmdlogic = espeasyCmd::byEqLogicIdAndLogicalId($elogic->getId(),$cmd);
 if (!is_object($cmdlogic)) {
 	$cmdlogic = new espeasyCmd();
-	$cmdlogic->setLogicalId($taskid);
+	$cmdlogic->setLogicalId($cmd);
 	$cmdlogic->setIsVisible(1);
-	$cmdlogic->setName($task);
+	$cmdlogic->setName($cmd);
 	$cmdlogic->setType('info');
 	$cmdlogic->setSubType('numeric');
 	$cmdlogic->setEqLogic_id($elogic->getId());
+	$cmdlogic->setConfiguration('taskid',$taskid);
 }
 $cmdlogic->setConfiguration('value',$value);
 $cmdlogic->save();

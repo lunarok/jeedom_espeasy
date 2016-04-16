@@ -29,14 +29,25 @@ if (!isConnect()) {
   <div class="form-group">
     <fieldset>
 
-      <div id="div_local" class="form-group">
-        <label class="col-lg-4 control-label">{{URL à saisir dans ESPeasy}} :</label>
+      <div class="form-group">
+        <label class="col-lg-4 control-label">{{IP Controleur à saisir dans ESPeasy}} :</label>
         <div class="col-lg-4">
           <?php
-            $url = network::getNetworkAccess('internal') . '/plugins/espeasy/core/api/jeeEspeasy.php?apikey=' . config::byKey('api') . '&device=%sysname%&task=%tskname%&taskid=%id%&param=%valname%&value=%value%';
-            echo $url;
+            echo config::byKey('internalAddr');
           ?>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label class="col-lg-4 control-label">{{Port Controleur à saisir dans ESPeasy}} :</label>
+        <div class="col-lg-4">
+          8121
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-4 control-label">{{Publish template à saisir dans ESPeasy}} :</label>
+        <div class="col-lg-4">device=%sysname%&taskid=%id%&cmd=%valname%&value=%value%
         </div>
       </div>
 

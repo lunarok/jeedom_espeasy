@@ -6,4 +6,6 @@
     <author>lunarok</author>
     <require>2.1</require>
     <category>automation protocol</category>
+    <hasDependency>1</hasDependency>
+    <hasOwnDeamon>1</hasOwnDeamon>
 </info>

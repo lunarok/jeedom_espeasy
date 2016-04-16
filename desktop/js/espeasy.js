@@ -154,12 +154,12 @@ if (init(_cmd.type) == 'action') {
   tr += '</td>';
   tr += '<td>';
   tr += '<input class="cmdAttr form-control input-sm" data-l1key="id" style="display : none;">';
-    tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
-    tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
+  tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
+  tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
   tr += '</td><td>';
-  tr += '<<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="taskid">';
+  tr += '<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="request">';
   tr += '</td><td>';
-  tr += '<<input class="cmdAttr form-control input-sm" data-l1key="configuration" data-l2key="value">';
+  tr += 'control?cmd=<span class="cmdAttr"  data-l1key="configuration" data-l2key="request"></span>';
   tr += '</td><td>';
   tr += '</td><td>';
   tr += '<span><input type="checkbox" data-size="mini" data-label-text="{{Afficher}}" class="cmdAttr bootstrapSwitch" data-l1key="isVisible" /></span>';

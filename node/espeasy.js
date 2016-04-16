@@ -6,15 +6,15 @@ var urlJeedom = process.argv[2],
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-function sayHello(req, res) {
-    if (debug == 1) {console.log("We've got a request for " + req.url);}
-    var uri = url.parse(request.url).pathname
-    url = urlJeedom + "&" + uri;
+function answer(req, res) {
+    console.log("We've got a request for " + req.url);
+    var uri = parse(req.url).pathname
+    url = urlJeedom + "&" + uri + "&" + req.connection.remoteAddress;
+    if (debug == 1) {console.log("Calling Jeedom " + url);}
   	request({
   		url: url,
   		method: 'PUT',
   	},
-    if (debug == 1) {console.log("Calling Jeedom " + url);}
   	function (error, response, body) {
   		if (!error && response.statusCode == 200) {
   			if (debug == 1) {console.log((new Date()) + "Got response Value: " + response.statusCode);}
@@ -34,3 +34,16 @@ function sayHello(req, res) {
     // End of HTTP response
     res.end();
 }
+
+/************************/
+/*  START THE SERVER    */
+/************************/
+
+// Create the HTTP server
+var server = http.createServer(answer);
+
+// Turn server on - now listening for requests on localIP and port
+server.listen(8121);
+
+// print message to terminal that server is running
+console.log('Server running');
