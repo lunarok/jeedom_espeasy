@@ -63,6 +63,7 @@ if (!is_object($cmdlogic)) {
 	$cmdlogic->setConfiguration('cmd',$cmd);
 }
 $cmdlogic->setConfiguration('value',$value);
+$cmdlogic->event($value);
 $cmdlogic->save();
 
 return true;

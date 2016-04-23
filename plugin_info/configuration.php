@@ -30,7 +30,7 @@ if (!isConnect()) {
     <fieldset>
 
       <div class="form-group">
-        <label class="col-lg-4 control-label">{{IP Controleur à saisir dans ESPeasy}} :</label>
+        <label class="col-lg-4 control-label">{{IP Controleur à saisir dans ESPeasy (onglet config)}} :</label>
         <div class="col-lg-4">
           <?php
             echo config::byKey('internalAddr');
@@ -39,14 +39,14 @@ if (!isConnect()) {
       </div>
 
       <div class="form-group">
-        <label class="col-lg-4 control-label">{{Port Controleur à saisir dans ESPeasy}} :</label>
+        <label class="col-lg-4 control-label">{{Port Controleur à saisir dans ESPeasy (onglet config)}} :</label>
         <div class="col-lg-4">
           8121
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-lg-4 control-label">{{Publish template à saisir dans ESPeasy}} :</label>
+        <label class="col-lg-4 control-label">{{Publish template à saisir dans ESPeasy (onglet tools, puis bouton advanced)}} :</label>
         <div class="col-lg-4">device=%sysname%&taskid=%id%&cmd=%valname%&value=%value%
         </div>
       </div>
