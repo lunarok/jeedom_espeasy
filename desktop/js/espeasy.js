@@ -30,6 +30,12 @@ $('#bt_healthespeasy').on('click', function () {
   $('#md_modal').load('index.php?v=d&plugin=espeasy&modal=health').dialog('open');
 });
 
+$('#bt_webespeasy').on('click', function () {
+  var nodeId = $('#idespeasy').text();
+  $('#md_modal').dialog({title: "{{Interface espeasy}}"});
+  $('#md_modal').load('index.php?v=d&plugin=espeasy&modal=web&ip=192.168.0.62').dialog('open');
+});
+
 $('.changeIncludeState').on('click', function () {
   var el = $(this);
   jeedom.config.save({

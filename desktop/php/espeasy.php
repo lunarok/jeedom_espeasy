@@ -108,6 +108,8 @@ if ($state == 1) {
             <fieldset>
                 <legend><i class="fa fa-arrow-circle-left eqLogicAction cursor" data-action="returnToThumbnailDisplay"></i>  {{Général}}
                 <i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i>
+                <a class="btn btn-xs btn-default pull-right eqLogicAction" data-action="copy"><i class="fa fa-files-o"></i> {{Dupliquer}}</a>
+            </legend>
                 </legend>
                 <div class="form-group">
                     <label class="col-md-2 control-label">{{Nom de l'ESP}}</label>
@@ -176,24 +178,27 @@ if ($state == 1) {
                 <div id="infoNode" class="col-sm-6">
                 <form class="form-horizontal">
                     <fieldset>
-                        <legend><i class="fa fa-info-circle"></i>  {{Configuration}}</legend>
+                        <legend><i class="fa fa-info-circle"></i>  {{Paramètres de l'espeasy}}</legend>
 
                         <div class="form-group">
                     		<label class="col-md-2 control-label">{{IP de l'ESP}}</label>
                     		<div class="col-md-3">
-                    		 <span id="nodeId" class="eqLogicAttr" data-l1key="configuration" data-l2key="ip"></span>
+                         <input id="idespeasy" type="text" class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="ip" placeholder="{{Adresse IP}}"/>
                     		</div>
 
                     		<label class="col-md-2 control-label">{{Nom de l'ESP}}</label>
                     		<div class="col-md-3">
                         	<span class="eqLogicAttr" data-l1key="configuration" data-l2key="device"></span>
                     		</div>
+                        </div>
 
-                	</div>
+                        <div class="form-group">
+                        <label class="col-md-2 control-label">{{Accès à l'ESP}}</label>
+                    		<div class="col-md-3">
+                        	<a class="btn btn-default" id="bt_webespeasy"><i class="fa fa-cogs"></i> Interface web espeasy</a>
+                    		</div>
 
-                	<legend><i class="fa fa-info-circle"></i>  {{Paramètres du Sketch}}</legend>
-                	<div class="form-group">
-                    		<label class="col-md-2 control-label">{{Catégorie du noeud}}</label>
+                    		<label class="col-md-2 control-label">{{Catégorie de l'espeasy}}</label>
                     		<div class="col-md-3">
                         	<select id="sel_icon" class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="icone">
 								<option value="">{{Aucun}}</option>

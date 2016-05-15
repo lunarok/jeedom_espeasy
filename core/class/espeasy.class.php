@@ -118,6 +118,16 @@ class espeasy extends eqLogic {
     $resource_path = realpath(dirname(__FILE__) . '/../../resources');
     passthru('/bin/bash ' . $resource_path . '/nodejs.sh ' . $resource_path . ' > ' . log::getPathToLog('espeasy_dep') . ' 2>&1 &');
   }
+
+  public function preUpdate() {
+    if ($this->getConfiguration('ip') == '') {
+      throw new Exception(__('L\'adresse ne peut etre vide',__FILE__));
+    }
+  }
+
+  public function preSave() {
+    $this->setLogicalId($this->getConfiguration('ip'));
+  }
 }
 
 class espeasyCmd extends cmd {
