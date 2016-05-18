@@ -33,7 +33,7 @@ $('#bt_healthespeasy').on('click', function () {
 $('#bt_webespeasy').on('click', function () {
   var nodeId = $('#idespeasy').text();
   $('#md_modal').dialog({title: "{{Interface espeasy}}"});
-  $('#md_modal').load('index.php?v=d&plugin=espeasy&modal=web&ip=192.168.0.62').dialog('open');
+  $('#md_modal').load('index.php?v=d&plugin=espeasy&modal=web&ip=' + nodeId).dialog('open');
 });
 
 $('.changeIncludeState').on('click', function () {
