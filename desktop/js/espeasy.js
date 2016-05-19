@@ -31,7 +31,7 @@ $('#bt_healthespeasy').on('click', function () {
 });
 
 $('#bt_webespeasy').on('click', function () {
-  var nodeId = $('#idespeasy').text();
+  var nodeId = $('#idespeasy').value();
   $('#md_modal').dialog({title: "{{Interface espeasy}}"});
   $('#md_modal').load('index.php?v=d&plugin=espeasy&modal=web&ip=' + nodeId).dialog('open');
 });
