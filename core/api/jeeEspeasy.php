@@ -31,6 +31,9 @@ $value = init('value');
 
 $elogic = espeasy::byLogicalId($ip, 'espeasy');
 if (!is_object($elogic)) {
+	if (config::byKey('include_mode','espeasy') != 1) {
+		return false;
+	}
 	$elogic = new espeasy();
 	$elogic->setEqType_name('espeasy');
 	$elogic->setLogicalId($ip);
