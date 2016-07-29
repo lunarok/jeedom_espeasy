@@ -8,8 +8,8 @@ DIRECTORY="/var/www"
 if [ ! -d "$DIRECTORY" ]; then
   echo "Création du home www-data pour npm"
   sudo mkdir $DIRECTORY
-  sudo chown -R www-data $DIRECTORY
 fi
+sudo chown -R www-data $DIRECTORY
 echo 10 > /tmp/espeasy_dep
 actual=`nodejs -v`;
 echo "Version actuelle : ${actual}"
