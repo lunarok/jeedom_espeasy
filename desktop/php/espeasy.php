@@ -185,7 +185,9 @@ if ($state == 1) {
               <div class="col-sm-3">
                 <input id="idespeasy" type="text" class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="ip" placeholder="{{Adresse IP}}"/>
               </div>
+              </div>
 
+              <div class="form-group">
               <label class="col-sm-3 control-label">{{Nom de l'ESP}}</label>
               <div class="col-sm-3">
                 <span class="eqLogicAttr" data-l1key="configuration" data-l2key="device"></span>
@@ -197,6 +199,9 @@ if ($state == 1) {
               <div class="col-sm-3">
                 <a class="btn btn-default" id="bt_webespeasy"><i class="fa fa-cogs"></i> Interface web espeasy</a>
               </div>
+              </div>
+
+              <div class="form-group">
 
               <label class="col-sm-3 control-label">{{Catégorie de l'espeasy}}</label>
               <div class="col-sm-3">
