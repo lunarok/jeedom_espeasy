@@ -244,6 +244,8 @@ if ($state == 1) {
         </form>
       </div>
 
+      <div role="tabpanel" class="tab-pane" id="commandtab">
+
 
       <form class="form-horizontal">
         <fieldset>
