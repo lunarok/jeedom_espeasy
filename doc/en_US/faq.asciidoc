@@ -2,5 +2,5 @@
 [panel,primary]
 . Is the plugin uses the Cloud?
 --
-Non, les communications se font via HTTP directement des ESP à Jeedom
+No, communications are via HTTP directly from ESP to Jeedom
 --
