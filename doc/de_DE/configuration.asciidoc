@@ -2,17 +2,17 @@
 
 La page du plugin indique les 3 informations à renseigner dans vos ESPeasy, il n'y a pas de configuration à faire pour les capteurs
 
-Auf bestehenden Anlagen können Sie die Aktoren hinzufügen
+Auf bestehenden Anlagen können Sie Aktoren hinzufügen
 
-L'adresse du controlleur et le port sont à renseigner sur l'onglet "config"
+Die Adresse und der Port des Kontrollers, sind über den Registerkarte „Konfiguration“ abzufragen
 
 image::../images/espeasy_conf1.png[Image du produit]
 
-Pour le publish template, il faut aller dans l'onglet "tools"
+Um die Vorlage zu veröffentlichen, gehen Sie auf die Registerkarte "Extras"
 
 image::../images/espeasy_conf2.png[Image du produit]
 
-Là on clique sur le bouton "advanced" et on remplit le champ "publish template"
+Hier klicken Sie auf die Schaltfläche "Erweitert" und füllen Sie das Feld  "Vorlage veröffentlichen" aus.
 
 image::../images/espeasy_conf3.png[Image du produit]
 
