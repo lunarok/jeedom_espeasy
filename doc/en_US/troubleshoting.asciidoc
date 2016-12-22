@@ -1,5 +1,5 @@
 [panel,danger]
-.Comment se créer mes équipements?
+.How do I create my equipment?
 --
 A l'envoi d'informations par l'ESP
 --

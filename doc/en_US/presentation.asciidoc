@@ -1,5 +1,5 @@
 '''
-=== ESPeasy, firmware polyvalent pour les ESP8266
+=== ESPeasy, versatile firmware for the ESP8266
 
 ESPeasy est un firmware pour les différents types d'ESP8266.
 
