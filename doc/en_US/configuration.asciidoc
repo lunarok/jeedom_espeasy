@@ -2,7 +2,7 @@
 
 The plugin page shows 3 information to fill in your ESPeasy, there is no configuration for the sensors
 
-Sur un équipement existant, vous pourrez rajouter les actionneurs
+On existing equipment, you can add the actuators
 
 L'adresse du controlleur et le port sont à renseigner sur l'onglet "config"
 

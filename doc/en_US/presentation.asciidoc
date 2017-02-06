@@ -1,7 +1,7 @@
 '''
 === ESPeasy, versatile firmware for the ESP8266
 
-ESPeasy est un firmware pour les différents types d'ESP8266.
+ESPeasy is a firmware for the different types of ESP8266.
 
 Une fois chargé, vous disposez d'une page web d'administration qui permet de configurer les capteurs/actionneurs de l'ESP en live et aussi son interaction avec un logiciel de domotique
 
