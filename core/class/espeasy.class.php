@@ -47,7 +47,7 @@ class espeasy extends eqLogic {
     }
     log::add('espeasy', 'info', 'Lancement du démon espeasy');
 
-    $url = network::getNetworkAccess('internal') . '/plugins/espeasy/core/api/jeeEspeasy.php?apikey=' . jeedom::getApiKey('espeasy');
+    $url = network::getNetworkAccess('internal', 'proto:127.0.0.1:port:comp') . '/plugins/espeasy/core/api/jeeEspeasy.php?apikey=' . jeedom::getApiKey('espeasy');
 
     if ($_debug = true) {
       $log = "1";
