@@ -14,7 +14,7 @@ echo 10 > /tmp/espeasy_dep
 actual=`nodejs -v`;
 echo "Version actuelle : ${actual}"
 
-if [[ $actual == *"4."* || $actual == *"5."* ]]
+if [[ $actual == *"4."* || $actual == *"5."* || $actual == *"6."* ]]
 then
   echo "Ok, version suffisante";
 else
