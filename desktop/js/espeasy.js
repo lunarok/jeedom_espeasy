@@ -153,8 +153,11 @@ if (init(_cmd.type) == 'action') {
   tr += '<input class="cmdAttr form-control input-sm" data-l1key="name">';
   tr += '</div>';
   tr += '</div>';
+  tr += '<select class="cmdAttr form-control tooltips input-sm" data-l1key="value" style="display : none;margin-top : 5px;" title="{{La valeur de la commande vaut par dÃ©faut la commande}}">';
+  tr += '<option value="">Aucune</option>';
+  tr += '</select>';
   tr += '</td>';
-  tr += '<td class="expertModeVisible">';
+  tr += '<td>';
   tr += '<span class="type" type="' + init(_cmd.type) + '">' + jeedom.cmd.availableType() + '</span>';
   tr += '<span class="subType" subType="' + init(_cmd.subType) + '"></span>';
   tr += '</td>';
