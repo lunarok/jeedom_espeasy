@@ -1,5 +1,6 @@
 # Description
 
+
 ## ESPeasy, firmware polyvalent pour les ESP8266
 
 ESPeasy est un firmware pour les différents types d’ESP8266.
@@ -18,6 +19,10 @@ fonctionne en MQTT.
 En revanche, il offre une URL unique à renseigner pour tous les ESP8266
 et la création des équipements à la volée avec leurs capteurs. Les
 actionneurs sont ajoutés en saisissant juste leur ID et valeur.
+
+## Références ESPeasy
+
+Site ESPeasy : https://www.letscontrolit.com/wiki/index.php/ESPEasy
 
 # Configuration du plugin
 
@@ -48,10 +53,9 @@ remonte, n’oubliez pas de le saisir dans l’onglet "device"
 
 # FAQ
 
-> We're living the future so
-> the present is our past.
-> Est-ce que le plugin utilise le Cloud ?
-Non, les communications se font via HTTP directement des ESP à Jeedom
+Est-ce que le plugin utilise le Cloud ?
+
+> Non, les communications se font via HTTP directement des ESP à Jeedom
 
 
 # Troubleshoting
