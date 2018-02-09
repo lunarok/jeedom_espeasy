@@ -22,7 +22,7 @@ actionneurs sont ajoutés en saisissant juste leur ID et valeur.
 
 ## Références ESPeasy
 
-Site ESPeasy : https://www.letscontrolit.com/wiki/index.php/ESPEasy
+Site ESPeasy : [This link](https://www.letscontrolit.com/wiki/index.php/ESPEasy)
 
 # Configuration du plugin
 
@@ -32,13 +32,19 @@ Après installation du plugin, les dépendances s'installent.
 
 Quand le démon démarre, la page du plugin indique les 3 informations à renseigner dans vos ESPeasy, il n’y a pas de configuration à faire pour les capteurs.
 
-## configuration 
-
 ![Image du produit](images/espeasy_conf-0.png)
+
+## configuration du module
+
+Il faut éditer la page controllers :
 
 ![Image du produit](images/espeasy_conf-1.png)
 
+Editer les valeurs avec celles fournies par le plugin :
+
 ![Image du produit](images/espeasy_conf-2.png)
+
+---
 
 Sur un équipement existant, vous pourrez rajouter les actionneurs
 
