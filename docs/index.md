@@ -28,9 +28,9 @@ Site ESPeasy : [This link](https://www.letscontrolit.com/wiki/index.php/ESPEasy)
 
 ## installation du plugin 
 
-Après installation du plugin, les dépendances s'installent.
+Après installation et activation du plugin, l'installation des dépendances se lance.
 
-Quand le démon démarre, la page du plugin indique les 3 informations à renseigner dans vos ESPeasy, il n’y a pas de configuration à faire pour les capteurs.
+Le démon lancé, la page du plugin indique les 3 informations à renseigner dans vos modules ESPeasy, il n’y a pas de configuration à faire pour les capteurs.
 
 ![Image du produit](images/espeasy_conf-0.png)
 
