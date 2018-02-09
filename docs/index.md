@@ -26,8 +26,19 @@ Site ESPeasy : https://www.letscontrolit.com/wiki/index.php/ESPEasy
 
 # Configuration du plugin
 
-La page du plugin indique les 3 informations à renseigner dans vos
-ESPeasy, il n’y a pas de configuration à faire pour les capteurs
+## installation du plugin 
+
+Après installation du plugin, les dépendances s'installent.
+
+Quand le démon démarre, la page du plugin indique les 3 informations à renseigner dans vos ESPeasy, il n’y a pas de configuration à faire pour les capteurs.
+
+## configuration 
+
+images/espeasy_conf-0.png
+
+images/espeasy_conf-1.png
+
+images/espeasy_conf-2.png
 
 Sur un équipement existant, vous pourrez rajouter les actionneurs
 
@@ -61,4 +72,9 @@ Est-ce que le plugin utilise le Cloud ?
 # Troubleshoting
 
 Comment se créer mes équipements?
-A l’envoi d’informations par l’ESP
+
+> A l’envoi d’informations par l’ESP
+
+Vos ESPeasy ne remontent pas dans le plugin
+
+> Vérifier que la configuration réseau interne de votre Jeedom est bien configurée avec une adresse IP et non DNS.
