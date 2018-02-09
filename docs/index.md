@@ -1,4 +1,4 @@
-ESPeasy, firmware polyvalent pour les ESP8266 {#_espeasy_firmware_polyvalent_pour_les_esp8266}
+ESPeasy, firmware polyvalent pour les ESP8266
 =============================================
 
 ESPeasy est un firmware pour les différents types d’ESP8266.
@@ -7,7 +7,7 @@ Une fois chargé, vous disposez d’une page web d’administration qui
 permet de configurer les capteurs/actionneurs de l’ESP en live et aussi
 son interaction avec un logiciel de domotique
 
-Que fait le plugin Jeedom pour ESPeasy {#_que_fait_le_plugin_jeedom_pour_espeasy}
+Que fait le plugin Jeedom pour ESPeasy
 ======================================
 
 Le plugin facilite l’utilisation d’ESPeasy avec Jeedom.
@@ -19,6 +19,7 @@ En revanche, il offre une URL unique à renseigner pour tous les ESP8266
 et la création des équipements à la volée avec leurs capteurs. Les
 actionneurs sont ajoutés en saisissant juste leur ID et valeur.
 Configuration du plugin {#_configuration_du_plugin}
+
 =======================
 
 La page du plugin indique les 3 informations à renseigner dans vos
