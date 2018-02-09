@@ -48,7 +48,7 @@ Il semble nécessaire également que les capteurs aient un device
 renseigné, même si pour Jeedom il ne sert à rien, donc si rien ne
 remonte, n’oubliez pas de le saisir dans l’onglet "device"
 
-![Image du produit](images/espeasy_conf4.png)
+![Image du produit](images/espeasy_conf-4.png)
 
 # FAQ
 
