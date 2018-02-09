@@ -36,11 +36,11 @@ Le démon lancé, la page du plugin indique les 3 informations à renseigner dan
 
 ## configuration du module
 
-Il faut éditer la page controllers :
+###### Il faut éditer la page controllers :
 
 ![Image du produit](images/espeasy_conf-1.png)
 
-Editer les valeurs avec celles fournies par le plugin :
+###### Editer les valeurs avec celles fournies par le plugin :
 
 ![Image du produit](images/espeasy_conf-2.png)
 
