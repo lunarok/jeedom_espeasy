@@ -34,11 +34,11 @@ Quand le démon démarre, la page du plugin indique les 3 informations à rensei
 
 ## configuration 
 
-images/espeasy_conf-0.png
+![Image du produit](images/espeasy_conf-0.png)
 
-images/espeasy_conf-1.png
+![Image du produit](images/espeasy_conf-1.png)
 
-images/espeasy_conf-2.png
+![Image du produit](images/espeasy_conf-2.png)
 
 Sur un équipement existant, vous pourrez rajouter les actionneurs
 
