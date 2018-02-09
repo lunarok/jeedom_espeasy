@@ -22,7 +22,7 @@ actionneurs sont ajoutés en saisissant juste leur ID et valeur.
 
 ## Références ESPeasy
 
-Site ESPeasy : [This link](https://www.letscontrolit.com/wiki/index.php/ESPEasy)
+Site ESPeasy : [https://www.letscontrolit.com/wiki/index.php/ESPEasy](https://www.letscontrolit.com/wiki/index.php/ESPEasy)
 
 # Configuration du plugin
 
