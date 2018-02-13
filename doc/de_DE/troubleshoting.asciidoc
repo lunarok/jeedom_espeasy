@@ -1,5 +1,0 @@
-[panel,danger]
-.Wie kann ich meine Geräte erschaffen?
---
-A l'envoi d'informations par l'ESP
---

@@ -1,6 +1,0 @@
-
-[panel,primary]
-. Is the plugin uses the Cloud?
---
-No, communications are via HTTP directly from ESP to Jeedom
---

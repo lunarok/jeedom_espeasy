@@ -1,5 +1,0 @@
-[panel,danger]
-.Comment se créer mes équipements?
---
-A l'envoi d'informations par l'ESP
---
