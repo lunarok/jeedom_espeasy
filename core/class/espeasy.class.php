@@ -31,7 +31,7 @@ class espeasy extends eqLogic {
     $return = array();
     $return['log'] = 'espeasy_node';
     $return['state'] = 'nok';
-    $pid = trim( shell_exec ('ps ax | grep "espeasy/node/espeasy.js" | grep -v "grep" | wc -l') );
+    $pid = trim( shell_exec ('ps ax | grep "espeasy/resources/espeasy.js" | grep -v "grep" | wc -l') );
     if ($pid != '' && $pid != '0') {
       $return['state'] = 'ok';
     }
@@ -54,7 +54,7 @@ class espeasy extends eqLogic {
     } else {
       $log = "0";
     }
-    $sensor_path = realpath(dirname(__FILE__) . '/../../node');
+    $sensor_path = realpath(dirname(__FILE__) . '/../../resources');
 
     $cmd = 'nice -n 19 nodejs ' . $sensor_path . '/espeasy.js ' . config::byKey('internalAddr') . ' ' . $url . ' ' . $log;
 
@@ -85,25 +85,25 @@ class espeasy extends eqLogic {
   }
 
   public static function deamon_stop() {
-    exec('kill $(ps aux | grep "espeasy/node/espeasy.js" | awk \'{print $2}\')');
+    exec('kill $(ps aux | grep "espeasy/resources/espeasy.js" | awk \'{print $2}\')');
     log::add('espeasy', 'info', 'Arrêt du service espeasy');
     $deamon_info = self::deamon_info();
     if ($deamon_info['state'] == 'ok') {
       sleep(1);
-      exec('kill -9 $(ps aux | grep "espeasy/node/espeasy.js" | awk \'{print $2}\')');
+      exec('kill -9 $(ps aux | grep "espeasy/resources/espeasy.js" | awk \'{print $2}\')');
     }
     $deamon_info = self::deamon_info();
     if ($deamon_info['state'] == 'ok') {
       sleep(1);
-      exec('sudo kill -9 $(ps aux | grep "espeasy/node/espeasy.js" | awk \'{print $2}\')');
+      exec('sudo kill -9 $(ps aux | grep "espeasy/resources/espeasy.js" | awk \'{print $2}\')');
     }
   }
 
   public static function dependancy_info() {
     $return = array();
     $return['log'] = 'espeasy_dep';
-    $serialport = realpath(dirname(__FILE__) . '/../../node/node_modules/http');
-    $request = realpath(dirname(__FILE__) . '/../../node/node_modules/request');
+    $serialport = realpath(dirname(__FILE__) . '/../../resources/node_modules/http');
+    $request = realpath(dirname(__FILE__) . '/../../resources/node_modules/request');
     $return['progress_file'] = '/tmp/espeasy_dep';
     if (is_dir($serialport) && is_dir($request)) {
       $return['state'] = 'ok';
