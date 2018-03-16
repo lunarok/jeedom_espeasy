@@ -85,17 +85,17 @@ class espeasy extends eqLogic {
   }
 
   public static function deamon_stop() {
-    exec('kill $(ps aux | grep "espeasy/resources/espeasy.js" | awk \'{print $2}\')');
+    exec('kill $(ps aux | grep "/espeasy.js" | awk \'{print $2}\')');
     log::add('espeasy', 'info', 'Arrêt du service espeasy');
     $deamon_info = self::deamon_info();
     if ($deamon_info['state'] == 'ok') {
       sleep(1);
-      exec('kill -9 $(ps aux | grep "espeasy/resources/espeasy.js" | awk \'{print $2}\')');
+      exec('kill -9 $(ps aux | grep "/espeasy.js" | awk \'{print $2}\')');
     }
     $deamon_info = self::deamon_info();
     if ($deamon_info['state'] == 'ok') {
       sleep(1);
-      exec('sudo kill -9 $(ps aux | grep "espeasy/resources/espeasy.js" | awk \'{print $2}\')');
+      exec('sudo kill -9 $(ps aux | grep "/espeasy.js" | awk \'{print $2}\')');
     }
   }
 
@@ -116,7 +116,7 @@ class espeasy extends eqLogic {
   public static function dependancy_install() {
     log::add('espeasy','info','Installation des dépéndances nodejs');
     $resource_path = realpath(dirname(__FILE__) . '/../../resources');
-    passthru('/bin/bash ' . $resource_path . '/nodejs.sh ' . $resource_path . ' > ' . log::getPathToLog('espeasy_dep') . ' 2>&1 &');
+    passthru('/bin/bash ' . $resource_path . '/nodejs.sh ' . $resource_path . ' espeasy > ' . log::getPathToLog('espeasy_dep') . ' 2>&1 &');
   }
 
   public function preUpdate() {
