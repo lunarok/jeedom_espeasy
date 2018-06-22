@@ -1,12 +1,15 @@
 {
   "id" : "espeasy",
   "name" : "ESPeasy",
+  "description" : "Les ESP8266 sont des cousins éloignés des Arduino. Disposant d'un nombre variable de connecteurs IO leur principale différence est d'être Wifi.Pas besoin d'un contrôleur donc, vos capteurs ESP8266 peuvent directement communiquer en Wifi. ESPeasy est un firmware permettant via une interface web de configurer l'ESP et les capteurs branchés. Ainsi si vous modifiez le montage, pas besoin de modifier le sketch, juste d'aller à l'interface web. Ce plugin vous permet d'utiliser plus facilement le mode Generic HTTP de ESPeasy, sans avoir à passer par le MQTT par exemple.",
   "licence" : "AGPL",
   "author" : "lunarok",
   "require" : "2.4",
   "category" : "automation protocol",
   "hasDependency" : 1,
   "hasOwnDeamon" : 1,
+	"language" : ["fr_FR","en_US"],
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
   "changelog" : "https://lunarok.github.io/jeedom_docs/plugins/espeasy/changelog.html",
   "documentation" : "https://lunarok.github.io/jeedom_docs/plugins/espeasy/"
 }
