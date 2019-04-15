@@ -51,13 +51,13 @@ $('.changeIncludeState').on('click', function () {
         $('.changeIncludeState').attr('data-state', 0);
         $('.changeIncludeState.card').css('background-color','#8000FF');
         $('.changeIncludeState.card span center').text('{{Arrêter l\'inclusion}}');
-        $('.changeIncludeState:not(.card)').html('<i class="fa fa-sign-in fa-rotate-90"></i> {{Arreter inclusion}}');
+        $('.changeIncludeState:not(.card)').html('<i class="fas fa-sign-in fa-rotate-90"></i> {{Arreter inclusion}}');
         $('#div_inclusionAlert').showAlert({message: '{{Vous etes en mode inclusion. Recliquez sur le bouton d\'inclusion pour sortir de ce mode}}', level: 'warning'});
       } else {
         $.hideAlert();
         $('.changeIncludeState:not(.card)').addClass('btn-default').removeClass('btn-success btn-danger');
         $('.changeIncludeState').attr('data-state', 1);
-        $('.changeIncludeState:not(.card)').html('<i class="fa fa-sign-in fa-rotate-90"></i> {{Mode inclusion}}');
+        $('.changeIncludeState:not(.card)').html('<i class="fas fa-sign-in fa-rotate-90"></i> {{Mode inclusion}}');
         $('.changeIncludeState.card span center').text('{{Mode inclusion}}');
         $('.changeIncludeState.card').css('background-color','#ffffff');
         $('#div_inclusionAlert').hideAlert();
@@ -125,10 +125,10 @@ function addCmdToTable(_cmd) {
     tr += '</td>';
     tr += '<td>';
     if (is_numeric(_cmd.id)) {
-      tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fa fa-cogs"></i></a> ';
-      tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fa fa-rss"></i> {{Tester}}</a>';
+      tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fas fa-cogs"></i></a> ';
+      tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fas fa-rss"></i> {{Tester}}</a>';
     }
-    tr += '<i class="fa fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
+    tr += '<i class="fas fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
     tr += '</tr>';
     $('#table_cmd tbody').append(tr);
     $('#table_cmd tbody tr:last').setValues(_cmd, '.cmdAttr');
@@ -146,7 +146,7 @@ if (init(_cmd.type) == 'action') {
   tr += '<td>';
   tr += '<div class="row">';
   tr += '<div class="col-lg-6">';
-  tr += '<a class="cmdAction btn btn-default btn-sm" data-l1key="chooseIcon"><i class="fa fa-flag"></i> Icone</a>';
+  tr += '<a class="cmdAction btn btn-default btn-sm" data-l1key="chooseIcon"><i class="fas fa-flag"></i> Icone</a>';
   tr += '<span class="cmdAttr" data-l1key="display" data-l2key="icon" style="margin-left : 10px;"></span>';
   tr += '</div>';
   tr += '<div class="col-lg-6">';
@@ -171,10 +171,10 @@ if (init(_cmd.type) == 'action') {
   tr += '</td>';
   tr += '<td>';
   if (is_numeric(_cmd.id)) {
-    tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fa fa-cogs"></i></a> ';
-    tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fa fa-rss"></i> {{Tester}}</a>';
+    tr += '<a class="btn btn-default btn-xs cmdAction expertModeVisible" data-action="configure"><i class="fas fa-cogs"></i></a> ';
+    tr += '<a class="btn btn-default btn-xs cmdAction" data-action="test"><i class="fas fa-rss"></i> {{Tester}}</a>';
   }
-  tr += '<i class="fa fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
+  tr += '<i class="fas fa-minus-circle pull-right cmdAction cursor" data-action="remove"></i></td>';
   tr += '</tr>';
 
   $('#table_cmd tbody').append(tr);
