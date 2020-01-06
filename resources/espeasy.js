@@ -9,8 +9,9 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 function answer(req, res) {
     var ipString = req.connection.remoteAddress;
-    console.log("We've got a request for " + req.url + " from " + ipString);
-    urlj = urlJeedom + "&" + req.url.replace("/", "") + "&ip=" + ipString;
+    var decodeUrl = decodeURIComponent(req.url).replace(/[/]/g,"");
+    console.log("We have got a request for " + decodeUrl + " from " + ipString);
+    urlj = urlJeedom + "&" + decodeUrl+ "&ip=" + ipString;
     if (debug == 1) {console.log("Calling Jeedom " + urlj);}
   	request({
   		url: urlj,
