@@ -34,13 +34,13 @@ if ($state == 1) {
 
       <?php
       if ($state == 1) {
-        echo '<div class="cursor eqLogicAction logoSecondary changeIncludeState card" data-state="0">';
+        echo '<div class="cursor logoSecondary changeIncludeState card" data-state="0">';
       } else {
-        echo '<div class="cursor eqLogicAction logoSecondary changeIncludeState card" data-state="1">';
+        echo '<div class="cursor logoSecondary changeIncludeState card" data-state="1">';
       }
       ?>
 
-          <i class="fas fa-sign-in fa-rotate-90"></i>
+          <i class="fas fa-plus-circle"></i>
           <br/>
         <span>{{Inclusion}}</span>
       </div>
@@ -49,8 +49,7 @@ if ($state == 1) {
         <br/>
         <span>{{Configuration}}</span>
       </div>
-      <div class="cursor eqLogicAction logoSecondary" id="bt_healthespeasy">
-        <center>
+      <div class="cursor logoSecondary" id="bt_healthespeasy">
           <i class="fas fa-medkit"></i>
         <br/>
         <span>{{Santé}}</span>
