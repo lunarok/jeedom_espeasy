@@ -39,7 +39,7 @@ class espeasy extends eqLogic {
     return $return;
   }
 
-  public static function deamon_start($_debug = false) {
+  public static function deamon_start() {
     self::deamon_stop();
     $deamon_info = self::deamon_info();
     if ($deamon_info['launchable'] != 'ok') {
@@ -49,11 +49,7 @@ class espeasy extends eqLogic {
 
     $url = network::getNetworkAccess('internal', 'proto:127.0.0.1:port:comp') . '/plugins/espeasy/core/api/jeeEspeasy.php?apikey=' . jeedom::getApiKey('espeasy');
 
-    if ($_debug = true) {
-      $log = "1";
-    } else {
-      $log = "0";
-    }
+    $log = log::getLogLevel('espeasy');
     $sensor_path = realpath(dirname(__FILE__) . '/../../resources');
 
     $cmd = 'nice -n 19 nodejs ' . $sensor_path . '/espeasy.js ' . config::byKey('internalAddr') . ' ' . $url . ' ' . $log;
