@@ -14,6 +14,7 @@ function answer(req, res) {
     urlj = urlJeedom + "&" + decodeUrl+ "&ip=" + ipString;
     if (loglevel <= 100) {console.log("Calling Jeedom " + urlj);} // DEBUG
   	request({
+		followAllRedirects: true,
   		url: urlj,
   		method: 'PUT',
   	},
