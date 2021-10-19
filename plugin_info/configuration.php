@@ -32,9 +32,16 @@ if (!isConnect()) {
       <div class="form-group">
         <label class="col-lg-4 control-label">{{IP Controleur à saisir dans ESPeasy (onglet config)}} :</label>
         <div class="col-lg-4">
-          <?php
-            echo config::byKey('internalAddr');
-          ?>
+          <select class="configKey form-control" data-l1key="espeasyIpAddr">
+            <?php
+              $ip_shell = shell_exec("ip addr | awk '/inet / {gsub(/\/.*/,\"\",$2); print $2}'");
+              $ip_array = preg_split('/\s+/', trim($ip_shell));
+              foreach($ip_array as $ip)
+              {
+                      echo "<option value='".$ip."'>".$ip."</option>";
+              }
+            ?>
+          </select>
         </div>
       </div>
 
