@@ -95,26 +95,6 @@ class espeasy extends eqLogic {
     }
   }
 
-  public static function dependancy_info() {
-    $return = array();
-    $return['log'] = 'espeasy_dep';
-    $serialport = realpath(dirname(__FILE__) . '/../../resources/node_modules/http');
-    $request = realpath(dirname(__FILE__) . '/../../resources/node_modules/request');
-    $return['progress_file'] = '/tmp/espeasy_dep';
-    if (is_dir($serialport) && is_dir($request)) {
-      $return['state'] = 'ok';
-    } else {
-      $return['state'] = 'nok';
-    }
-    return $return;
-  }
-
-  public static function dependancy_install() {
-    log::add('espeasy','info','Installation des dépéndances nodejs');
-    $resource_path = realpath(dirname(__FILE__) . '/../../resources');
-    passthru('/bin/bash ' . $resource_path . '/nodejs.sh ' . $resource_path . ' espeasy > ' . log::getPathToLog('espeasy_dep') . ' 2>&1 &');
-  }
-
   public function preUpdate() {
     if ($this->getConfiguration('ip') == '') {
       throw new Exception(__('L\'adresse ne peut etre vide',__FILE__));
