@@ -1,6 +1,5 @@
 {
   "npm" : {
-      "http" : {},
-      "request" : {}
+      "plugins/espeasy/resources": {},
     }
   }
