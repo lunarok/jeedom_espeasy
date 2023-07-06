@@ -52,7 +52,7 @@ class espeasy extends eqLogic {
     $log = log::getLogLevel('espeasy');
     $sensor_path = realpath(dirname(__FILE__) . '/../../resources');
 
-    $cmd = 'nice -n 19 nodejs ' . $sensor_path . '/espeasy.js ' . config::byKey('internalAddr') . ' ' . $url . ' ' . $log;
+    $cmd = 'nice -n 19 node ' . $sensor_path . '/espeasy.js ' . config::byKey('internalAddr') . ' ' . $url . ' ' . $log;
 
     log::add('espeasy', 'debug', 'Lancement démon espeasy : ' . $cmd);
 
