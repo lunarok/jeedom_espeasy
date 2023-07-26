@@ -1,4 +1,7 @@
 {
+  "apt":{
+    "nodejs" : {}
+  },
   "npm" : {
       "plugins/espeasy/resources": {}
     }
